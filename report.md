@@ -44,6 +44,12 @@ $TP \approx1900$, $FN \approx250$ catch $\approx88$% of fraudulent transactions.
 
 $FP \approx668$, $TN >550000$ → there are almost no false predictions.
 
+Final metrics:
+* ROC AUC: 0.9977
+* F1: 0.8063
+* Balanced Accuracy: 0.9423
+* Cost: 6912.2155
+
 The graphs are built for:
 * ROC-AUC;
 * Precision-Recall curve;
@@ -54,6 +60,6 @@ The graphs are built for:
 
 Pipeline has shown high efficiency on an unbalanced dataset.
 
-Cost-aware threshold tuning and logical sums allow you to control business risks and the reatio of false predictions.
+Cost-aware threshold tuning and logical sums allow you to control business risks and the ratio of false predictions.
 
 Possible improvements: processing of rare outliers, additional user-specific aggregates, and model ensembles.
