@@ -1,0 +1,5 @@
+.venv
+catboost_info
+*.cbm
+__pycache__
+/data
