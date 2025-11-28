@@ -3,7 +3,7 @@
 The task is to predict fraud transaction based on a transaction history. The main focus is on minimizing false negative forecasts and not increasing false positive forecasts too much.
 
 ## Data
-[The original dataset](https://www.kaggle.com/datasets/kartik2112/fraud-detection) is a transaction with numerical, categorical and time features. The positive class distribution is $\approx0.58\%$.
+[The original dataset](https://www.kaggle.com/datasets/kartik2112/fraud-detection) is a transaction with numerical, categorical and time features. The positive class distribution is $\approx0.58$%.
  
 **Created Features**:
 * The dates were divided into hours, day_of_week, month with created cyclic variants (sin/cos) and flags 'is night' and 'is weekend';
@@ -21,11 +21,11 @@ The task is to predict fraud transaction based on a transaction history. The mai
 * ZIP.
 
 ## Model
-CatBoostClassifier trained on GPU
+CatBoostClassifier trained on GPU.
 
-Hyperparameter optimization with optuna (depth, learning rate, l2 leaf regularization, bagging temperature, random strength, border cound)
+Hyperparameter optimization with optuna (depth, learning rate, l2 leaf regularization, bagging temperature, random strength, border cound).
 
-An early stop was used
+An early stop was used.
 
 ## Threshold and Metrics
 
@@ -40,16 +40,15 @@ The final threshold is $\approx0.06$, which minimizes FN while keeping FP low.
 
 ## Results
 
-$TP \approx1900$, $FN \approx250$ catch $\approx88\%$ of fraudulent transactions.
+$TP \approx1900$, $FN \approx250$ catch $\approx88$% of fraudulent transactions.
 
 $FP \approx668$, $TN >550000$ → there are almost no false predictions.
 
 The graphs are built for:
-
-* ROC-AUC
-* Precision-Recall curve
-* FP/FN by threshold
-* Cost metric by threshold
+* ROC-AUC;
+* Precision-Recall curve;
+* FP/FN by threshold;
+* Cost metric by threshold.
 
 ## Conclusion
 
