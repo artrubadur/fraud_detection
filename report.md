@@ -36,25 +36,27 @@ $$\ln(\text{FN amounts + 1}) \times 5 + \ln(\text{FP amounts + 1}) \times 0.5$$
 
 The logarithm of the sum is used to reduce the impact of extreme transactions on the cost metric.
 
-The final threshold is $\approx0.06$, which minimizes FN while keeping FP low.
+The final threshold is $\approx0.05$, which minimizes FN while keeping FP low.
 
 ## Results
 
-$TP \approx1890$, $FN \approx255$ catch $\approx88$% of fraudulent transactions.
+TP = 1922, FN = 223 catch $\approx89$% of fraudulent transactions.
 
-$FP \approx668$, $TN >550000$ → there are almost no false predictions.
+FP = 691, TN = 552883. There are almost no false predictions.
 
 Final metrics:
-* ROC AUC: 0.9978,
-* F1: 0.8000,
-* Balanced Accuracy: 0.9399,
-* Cost: 7076.7388.
+* ROC AUC: 0.9977,
+* F1: 0.8079,
+* Balanced Accuracy: 0.9474,
+* Cost: 6295.7695.
 
 The graphs are built for:
 * ROC-AUC,
 * Precision-Recall curve,
 * FP/FN by threshold,
-* Cost metric by threshold.
+* Cost metric by threshold,
+* Feature importance,
+* SHAP values.
 
 ## Conclusion
 
