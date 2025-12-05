@@ -6,7 +6,6 @@ from sklearn.metrics import auc
 
 # Analysis
 def num_features(features, df):
-
     for feature in features:
         values = df[feature]
 
@@ -112,6 +111,27 @@ def correlation_matrix(correlations):
         labels=list(correlations.index),
         rotation=0,
     )
+
+    plt.tight_layout()
+    plt.show()
+
+
+def anova(anova):
+    _, (ax1, ax2) = plt.subplots(2, 1, figsize=(12, 6))
+
+    ax1.set_title("ANOVA")
+
+    by_f_stat = anova.sort_values("f_stat", ascending=False)
+    sns.barplot(ax=ax1, x=by_f_stat.index, y=by_f_stat["f_stat"])
+    ax1.set_ylabel("F-statistics")
+    ax1.set_xlabel("")
+    ax1.tick_params(axis="x", rotation=15)
+
+    by_p_value = anova.sort_values("p_value", ascending=False)
+    sns.barplot(ax=ax2, x=by_p_value.index, y=by_p_value["p_value"])
+    ax2.set_ylabel("P-values")
+    ax2.set_xlabel("")
+    ax2.tick_params(axis="x", rotation=15)
 
     plt.tight_layout()
     plt.show()
@@ -242,31 +262,34 @@ def confusion_matrix(matrix):
     plt.show()
 
 
-def feature_importance(features, importances, top=15):
+def feature_importance(importances, top=15):
     plt.figure(figsize=(top * 0.8, 6))
 
+    most = importances.head(15)
     plt.subplot(1, 2, 1)
-    sns.barplot(x=features[:top], y=importances[:top])
+    sns.barplot(x=most.index, y=most["importance"])
     plt.ylabel("Feature Importance")
     plt.xlabel("")
     plt.title("Top 15 Most Important Features")
     plt.xticks(
         ticks=np.arange(top) + 0.5,
-        labels=list(features[:top]),
+        labels=list(most.index),
         rotation=45,
         ha="right",
     )
 
+    less = importances.tail(15)
     plt.subplot(1, 2, 2)
-    sns.barplot(x=features[-top:], y=importances[-top:])
+    sns.barplot(x=less.index, y=less["importance"])
     plt.ylabel("Feature Importance")
     plt.xlabel("")
     plt.title("Top 15 Less Important Features")
     plt.xticks(
         ticks=np.arange(top) + 0.5,
-        labels=list(features[-top:]),
+        labels=list(less.index),
         rotation=45,
         ha="right",
     )
 
+    plt.tight_layout()
     plt.show()

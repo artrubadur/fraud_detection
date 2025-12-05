@@ -40,20 +40,20 @@ The final threshold is $\approx0.06$, which minimizes FN while keeping FP low.
 
 ## Results
 
-$TP \approx1900$, $FN \approx250$ catch $\approx88$% of fraudulent transactions.
+$TP \approx1890$, $FN \approx255$ catch $\approx88$% of fraudulent transactions.
 
 $FP \approx668$, $TN >550000$ → there are almost no false predictions.
 
 Final metrics:
-* ROC AUC: 0.9977
-* F1: 0.8063
-* Balanced Accuracy: 0.9423
-* Cost: 6912.2155
+* ROC AUC: 0.9978,
+* F1: 0.8000,
+* Balanced Accuracy: 0.9399,
+* Cost: 7076.7388.
 
 The graphs are built for:
-* ROC-AUC;
-* Precision-Recall curve;
-* FP/FN by threshold;
+* ROC-AUC,
+* Precision-Recall curve,
+* FP/FN by threshold,
 * Cost metric by threshold.
 
 ## Conclusion

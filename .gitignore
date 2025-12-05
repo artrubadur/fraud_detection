@@ -1,5 +1,6 @@
 .venv
-catboost_info
-*.cbm
 __pycache__
-/data
+.ruff_cache
+catboost_info
+data
+artifacts*
